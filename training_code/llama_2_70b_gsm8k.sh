@@ -1,0 +1,51 @@
+accelerate launch qlora.py \
+--model_name_or_path meta-llama/Llama-2-70b-hf \
+--dataset_path {path-to-your-data} \
+--output_dir {path-to-save-adapters} \
+--prompt_key {input-in-your-data} \
+--label_key {output-in-your-data} \
+--do_train True \
+--max_steps 1000 \
+--learning_rate 0.0001 \		        # 0.0001 for models >= 34B / 0.0002 for models < 34B
+--lr_scheduler_type constant \
+--warmup_ratio 0.0 \
+--source_max_len 512 \			        # 512 for GSM8K / 768 for MATH
+--target_max_len 512 \			        # 512 for GSM8K / 768 for MATH
+--per_device_train_batch_size 6 \   # 6 for GSM8K / 3 for MATH
+--gradient_accumulation_steps 4 \   # 4 for GSM8K / 8 for MATH, 4 gpus, -> total batch size: 6*4*4=96
+--optim paged_adamw_32bit \
+--weight_decay 0.01 \
+--adam_beta2 0.999 \
+--max_grad_norm 0.3 \
+--lora_modules all \
+--lora_r 64 \
+--lora_alpha 16 \
+--lora_dropout 0.05 \
+--bf16 True \
+--fp16 False \
+--bits 4 \
+--double_quant True \
+--quant_type nf4 \
+--gradient_checkpointing True \
+--do_eval False \
+--do_mmlu_eval False \
+--evaluation_strategy steps \
+--eval_steps 10000 \
+--eval_dataset_size 1024 \
+--max_eval_samples 1000 \
+--per_device_eval_batch_size 1 \
+--logging_strategy steps \
+--logging_steps 10 \
+--save_strategy steps \
+--save_steps 100 \
+--save_total_limit 40 \
+--max_new_tokens 32 \
+--dataloader_num_workers 3 \
+--group_by_length True \
+--remove_unused_columns False \
+--log_aml_metrics True \
+--seed 0 \
+--data_seed 42 \
+--ddp_find_unused_parameters False \
+--report_to wandb \
+--trust_remote_code False
