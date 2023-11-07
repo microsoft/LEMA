@@ -1,0 +1,112 @@
+For the following math word problems, the original solutions may contain errors. Please identify the incorrect step in each solution, explain why it is incorrect, and provide the correct solution starting from that step.
+
+Question: Let \[f(x) =
+\begin{cases}
+2x^2 - 3&\text{if } x\le 2, \\
+ax + 4 &\text{if } x>2.
+\end{cases}
+\]Find $a$ if the graph of $y=f(x)$ is continuous (which means the graph can be drawn without lifting your pencil from the paper).
+Original Solution:
+{
+Step 1: For the graph of $y=f(x)$ to be continuous, the two cases must meet at $x=2$.
+Step 2: This means that the value of the function at $x=2$ must be the same for both cases.
+Step 3: So, we have: For the first case, when $x\le 2$, we have $f(2) = 2(2)^2 - 3 = 8$.
+Step 4: For the second case, when $x>2$, we have $f(2) = a(2) + 4$.
+Step 5: Now, we set these two values equal to each other: $8 = a(2) + 4$.
+Step 6: Solving for $a$, we get: $4 = 2a$.
+Step 7: $a = \boxed{2}$.
+Step 8: The answer is 2.
+}
+Incorrect Step: Step 3.
+Explanation: The calculation for $f(2)$ in the first case is wrong. It should be $f(2) = 2(2)^2 - 3 = 2(4) - 3 = 8 - 3 = 5$.
+Correct Solution:
+{
+...
+Step 3: For the first case, when $x\le 2$, we have $f(2) = 2(2)^2 - 3 = 5$.
+Step 4: For the second case, when $x>2$, we have $f(2) = a(2) + 4$.
+Step 5: Now, we set these two values equal to each other: $5 = a(2) + 4$.
+Step 6: Solving for $a$, we get: $1 = 2a$.
+Step 7: $a = \boxed{\frac{1}{2}}$.
+Step 8: The answer is \frac{1}{2}.
+}
+
+Question: Tom has a red marble, a green marble, a blue marble, and three identical yellow marbles. How many different groups of two marbles can Tom choose?
+Original Solution:
+{
+Step 1: There are two cases to consider: Case 1: Tom chooses two different colored marbles.
+Step 2: There are 3 non-yellow marbles (red, green, and blue) and 1 yellow marble that we can consider as distinct for this case.
+Step 3: So, there are 3 ways to choose a non-yellow marble and 1 way to choose a yellow marble, giving us 3 * 1 = 3 different groups in this case.
+Step 4: Case 2: Tom chooses two marbles of the same color.
+Step 5: There are 3 different colors (red, green, and blue) and 1 "effective" color for the yellow marbles since they are identical.
+Step 6: So, there are 4 ways to choose a color, but we must subtract 1 because we already counted the yellow marble in Case 1.
+Step 7: This gives us 4 - 1 = 3 different groups in this case.
+Step 8: In total, there are 3 (from Case 1) + 3 (from Case 2) = 6 different groups of two marbles that Tom can choose.
+Step 9: The answer is 6.
+}
+Incorrect Step: Step 3.
+Explanation: The calculation for $f(2)$ in the first case is wrong. It should be $f(2) = 2(2)^2 - 3 = 2(4) - 3 = 8 - 3 = 5$.
+Correct Solution:
+{
+...
+Step 3: So, there are 3 ways to choose a non-yellow marble and 1 way to choose a yellow marble, giving us 3 different groups. Additionally, there are 3 ways to choose two different non-yellow marbles (red-green, red-blue, green-blue), giving us a total of 3 + 3 = 6 different groups in this case.
+Step 4: Case 2: Tom chooses two marbles of the same color.
+Step 5: Only the number of yellow marbles is larger than 1, thus Tom can only choose 2 yellow marbles.
+Step 6: In total, there are 6 (from Case 1) + 1 (from Case 2) = 7 different groups of two marbles that Tom can choose.
+Step 7: The answer is 7.
+}
+
+Question: Regions I, II and III are bounded by squares. The perimeter of region I is 12 units and the perimeter of region II is 24 units. What is the ratio of the area of region I to the area of region III? Express your answer as a common fraction.
+
+[asy]
+draw((0,0)--(9,0)--(9,9)--(0,9)--(0,0)--cycle,linewidth(2));
+draw((9,0)--(15,0)--(15,6)--(9,6)--(9,0)--cycle,linewidth(2));
+draw((9,6)--(12,6)--(12,9)--(9,9)--cycle,linewidth(2));
+label("III",(4.5,4.5));
+label("II",(12,3));
+label("I",(10.5,7.5));
+[/asy]
+Original Solution:
+{
+Step 1: Since the perimeter of region I is 12 units, the side length of the square is $\frac{12}{4} = 3$ units.
+Step 2: Therefore, the area of region I is $3^2 = 9$ square units.
+Step 3: Since the perimeter of region II is 24 units, the side length of the square is $\frac{24}{4} = 6$ units.
+Step 4: Therefore, the area of region II is $6^2 = 36$ square units.
+Step 5: Now, we can see that region III is formed by subtracting the area of region I from the area of region II.
+Step 6: So, the area of region III is $36 - 9 = 27$ square units.
+Step 7: Finally, the ratio of the area of region I to the area of region III is $\frac{9}{27} = \boxed{\frac{1}{3}}$.
+Step 8: The answer is \frac{1}{3}.
+}
+Incorrect Step: Step 5.
+Explanation: The problem states that regions I, II, and III are bounded by squares, but it does not say that region III is formed by subtracting the area of region I from the area of region II. Instead, we need to find the side length of region III and then calculate its area.
+Correct Solution:
+{
+...
+Step 5: Observe that region III is a square that is formed by combining region I and region II side by side. So, the side length of region III is the sum of the side lengths of region I and region II, which is $3 + 6 = 9$ units.
+Step 6: Therefore, the area of region III is $9^2 = 81$ square units.
+Step 7: Finally, the ratio of the area of region I to the area of region III is $\frac{9}{81} = \boxed{\frac{1}{9}}$.
+Step 8: The answer is \frac{1}{9}.
+}
+
+Question: If the lengths of two sides of a right triangle are 5 and 12 units, what is the least possible length, in units, of the third side? Express your answer in simplest radical form.
+Original Solution:
+{
+Step 1: Since we are looking for the least possible length of the third side, we should assume that the given side lengths are the two legs of the right triangle.
+Step 2: In this case, the third side would be the hypotenuse.
+Step 3: Using the Pythagorean theorem, we can find the length of the hypotenuse: $a^2 + b^2 = c^2$. $5^2 + 12^2 = c^2$.
+Step 4: $25 + 144 = c^2$. $169 = c^2$.
+Step 5: $c = \sqrt{169} = \boxed{13}$ units.
+Step 6: The least possible length of the third side is 13 units.
+Step 7: The answer is 13.
+}
+Incorrect Step: Step 1.
+Explanation: The incorrect assumption in Step 1 is that the given side lengths are the two legs of the right triangle. To find the least possible length of the third side, we should assume that the given side lengths are the hypotenuse and one of the legs of the right triangle.
+Correct Solution:
+{
+Step 1: Since we are looking for the least possible length of the third side, we should assume that the given side lengths are the hypotenuse and one of the legs of the right triangle.
+Step 2: In this case, let's assume the hypotenuse is 12 units and one leg is 5 units.
+Step 3: Using the Pythagorean theorem, we can find the length of the other leg: $a2 + b2 = c2$. $a2 + 52 = 122$.
+Step 4: $a2 + 25 = 144$. $a2 = 119$.
+Step 5: $a = \sqrt{119} = \boxed{\sqrt{119}}$ units.
+Step 6: The least possible length of the third side is $\sqrt{119}$ units.
+Step 7: The answer is \sqrt{119}.
+}
