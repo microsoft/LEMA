@@ -30,7 +30,7 @@ def inference(testdata_folder, testdata_file, output_folder, output_file, merged
               max_num_batched_tokens=8192,
               gpu_memory_utilization=0.8)
 
-    sampling_params = SamplingParams(temperature=0.0, top_p=1.0, max_tokens=1024)
+    sampling_params = SamplingParams(temperature=0.0, top_p=1.0, max_tokens=2048)
 
     batch_size = 128
     total_batch_num = (total_lines // batch_size) + 1
