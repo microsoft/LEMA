@@ -1,4 +1,5 @@
-# This source code is licensed under the MIT license
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT license.
 
 from typing import Optional
 import logging, os, json
