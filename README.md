@@ -71,7 +71,10 @@ sh llama_2_70b_gsm8k.sh
 ### Evaluation
 
 Our evaluation is based on [vLLM](https://github.com/vllm-project/vllm) (0.1.4) for faster inference.
-We need to first merge the fine-tuned adapter into the original base model, and then run vllm inference.
+You need to first merge the fine-tuned adapter into the original base model, and then run vllm inference.
+
+To reproduce the reported resutls in the paper, you can use our fine-tuned adapters in [LEMAv1](https://huggingface.co/LEMAv1).
+For instance, to reproduce the result with Llama-2-70b on GSM8K, you can use [LEMAv1/peft-Llama-2-70b-gsm8k](https://huggingface.co/LEMAv1/peft-Llama-2-70b-gsm8k) and run the following script.
 
 ```sh
 # Example: evaluation process for llama2-70b on GSM8K
@@ -83,7 +86,7 @@ cd inference_code
 # Step1 1: Merge adapter into base model
 python qlora_merge.py \
 --base_model meta-llama/Llama-2-70b-hf \
---peft_model {path-to-your-saved-adapters} \
+--peft_model LEMAv1/peft-Llama-2-70b-gsm8k \
 --save_merged_model_path ./Llama-2-70b-GSM8K-LEMA-merged
 
 # Step 2: Run vLLM inference
