@@ -49,7 +49,7 @@ pip install -r requirements.txt
 
 ### Data
 
-Our training data is still under review and might not be released immediately.
+Our training data is still under Microsoft open source compliance review and might not be released immediately.
 Alternatively, we provide our [prompts](./prompts) for generating correction data.
 You can use them to construct your own correction data following the process described in our paper.
 
