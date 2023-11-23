@@ -2,12 +2,20 @@
 
 This is the official repo for the paper *Learning From Mistakes Makes LLM Better Reasoner*.
 
- - paper link: [https://arxiv.org/abs/2310.20689](https://arxiv.org/abs/2310.20689).
+ - Paper link: [https://arxiv.org/abs/2310.20689](https://arxiv.org/abs/2310.20689).
+ - Model link: [https://huggingface.co/LEMAv1](https://huggingface.co/LEMAv1).
 
 <p align="center">
     <img src="./pictures/overall.png" width="800">
     <br>
 </p>
+
+
+## News
+
+11/23/2023: We release [LEMAv1/peft-Llama-2-70b-csqa](https://huggingface.co/LEMAv1/peft-Llama-2-70b-csqa) for commonsense reasoning, achieving 85.3% accuracy on CommonsenseQA dataset!
+
+11/23/2023: We release two merged model [LEMAv1/merged-Llama-2-70b-gsm8k](https://huggingface.co/LEMAv1/merged-Llama-2-70b-gsm8k) and [LEMAv1/merged-Llama-2-70b-math](https://huggingface.co/LEMAv1/merged-Llama-2-70b-math) to facilitate reproducing the reported results.
 
 
 ## Introduction
@@ -84,6 +92,7 @@ huggingface-cli login
 cd inference_code
 
 # Step1 1: Merge adapter into base model
+# With merged models, you can skip this step.
 python qlora_merge.py \
 --base_model meta-llama/Llama-2-70b-hf \
 --peft_model LEMAv1/peft-Llama-2-70b-gsm8k \
