@@ -13,7 +13,7 @@ This is the official repo for the paper *Learning From Mistakes Makes LLM Better
 
 ## News
 
-11/23/2023: We release [LEMAv1/peft-Llama-2-70b-csqa](https://huggingface.co/LEMAv1/peft-Llama-2-70b-csqa) for commonsense reasoning, achieving 85.3% accuracy on CommonsenseQA dataset!
+11/23/2023: We release [LEMAv1/peft-Llama-2-70b-csqa](https://huggingface.co/LEMAv1/peft-Llama-2-70b-csqa) for commonsense reasoning, achieving 85.3% accuracy on CommonsenseQA dev set!
 
 11/23/2023: We release two merged model [LEMAv1/merged-Llama-2-70b-gsm8k](https://huggingface.co/LEMAv1/merged-Llama-2-70b-gsm8k) and [LEMAv1/merged-Llama-2-70b-math](https://huggingface.co/LEMAv1/merged-Llama-2-70b-math) to facilitate reproducing the reported results.
 
