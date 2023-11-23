@@ -4,6 +4,67 @@
 import string
 
 
+def minDistance(word1, word2):
+    """
+    :type word1: str
+    :type word2: str
+    :rtype: int
+    """
+
+    if word1 == word2:
+        return 0
+
+    wl_1 = len(word1)
+    wl_2 = len(word2)
+
+    if wl_1 == 0 or wl_2 == 0:
+        return max(wl_1, wl_2)
+
+    v1, v2 = [], []
+    for i in range(wl_2 + 1):
+        v1.append(i), v2.append(i + 1)
+
+    for i in range(1, wl_1 + 1):
+        for j in range(1, wl_2 + 1):
+            if word1[i - 1] == word2[j - 1]:
+                d = 0
+
+            else:
+                d = 1
+
+            minValue = min(v1[j] + 1,
+                           v1[j - 1] + d,
+                           v2[j - 1] + 1,
+                           )
+
+            v2[j] = minValue
+
+        for j in range(wl_2 + 1):
+            v1[j] = v2[j]
+            v2[j] = i + 1
+
+    return v1[-1]
+
+
+def get_csqa_match(pred, label, candidates):
+    if '\n\nQ: ' in pred:
+        pred = pred.split('\n\nQ: ')[0]
+    if '\n\nQuestion: ' in pred:
+        pred = pred.split('\n\nQuestion: ')[0]
+    if 'The answer is: ' in pred:
+        pred = pred.replace('The answer is: ', 'The answer is ')
+
+    pred_answer = pred.split('The answer is ')[-1].strip('.')
+
+    candidate_scores = [[candidate, minDistance(candidate, pred_answer)] for candidate in candidates]
+    candidate_scores.sort(key=lambda x:x[1])
+
+    if candidate_scores[0][0] == label:
+        return 1
+    else:
+        return 0
+        
+
 def _fix_fracs(string):
     substrs = string.split("\\frac")
     new_str = substrs[0]
